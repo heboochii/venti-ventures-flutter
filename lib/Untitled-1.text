@@ -1,57 +1,190 @@
 import 'package:flutter/material.dart';
 import 'package:account_widget_list/Models/accounts_model.dart';
 
-class CreditCard extends StatefulWidget {
+class AccountListView extends StatefulWidget {
   @override
-  _CreditCardState createState() => _CreditCardState();
+  _AccountListViewState createState() => _AccountListViewState();
 }
 
-class _CreditCardState extends State<CreditCard> {
+class _AccountListViewState extends State<AccountListView> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    double _animatedHeight = 100.0;
+    bool isClicked = false;
 
     return SizedBox(
-      height: 250,
+      height: height,
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
         itemCount: accountList.length,
         itemBuilder: (BuildContext context, int index) {
           final AccountsList accList = accountList[index];
           return accList.accountName == 'Credit Card Account'
-              ? GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _animatedHeight != 0.0
-                          ? _animatedHeight = 0.0
-                          : _animatedHeight = 100.0;
-                    });
-                  },
-                  child: Container(
-                    height: height * 0.02,
-                    width: width * 0.95,
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.pink,
-                      borderRadius: BorderRadius.circular(7),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.7),
-                          spreadRadius: 2,
-                          blurRadius: 7,
+              ? Column(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Text('Credit Card Account',
+                          style: TextStyle(
+                              fontSize: 16,
+                              letterSpacing: 3.2,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.start),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          // isClicked = true;
+                          print('aaa');
+                        });
+                      },
+                      child: Container(
+                        height: 100,
+                        width: width * 0.95,
+                        margin: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.pink,
+                          borderRadius: BorderRadius.circular(7),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.7),
+                              spreadRadius: 2,
+                              blurRadius: 7,
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          children: [
+                            Text(accList.accountName),
+                            Text(accList.accountName),
+                            Text(accList.accountName),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              : accList.accountName == 'Home Loan Account'
+                  ? Column(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Text('Home Loan Account',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  letterSpacing: 3.2,
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.start),
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            height: 100,
+                            width: width * 0.95,
+                            margin: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.pink,
+                              borderRadius: BorderRadius.circular(7),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.7),
+                                  spreadRadius: 2,
+                                  blurRadius: 7,
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              children: [
+                                Text(accList.accountName),
+                                Text(accList.accountName),
+                                Text(accList.accountName),
+                              ],
+                            ),
+                          ),
                         ),
                       ],
-                    ),
-                    child: Column(
-                      children: [
-                        Text(accList.accountName),
-                      ],
-                    ),
-                  ),
-                )
-              : Container();
+                    )
+                  : accList.accountName == 'Money Market Account'
+                      ? Column(
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Text('Money Market Account',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      letterSpacing: 3.2,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.start),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                height: 100,
+                                width: width * 0.95,
+                                margin: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: Colors.pink,
+                                  borderRadius: BorderRadius.circular(7),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.7),
+                                      spreadRadius: 2,
+                                      blurRadius: 7,
+                                    ),
+                                  ],
+                                ),
+                                child: Column(
+                                  children: [
+                                    Text(accList.accountName),
+                                    Text(accList.accountName),
+                                    Text(accList.accountName),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      : accList.accountName == 'Investment Account'
+                          ? Column(
+                              children: [
+                                Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  child: Text('Investment Account',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          letterSpacing: 3.2,
+                                          fontWeight: FontWeight.bold),
+                                      textAlign: TextAlign.start),
+                                ),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                    height: 100,
+                                    width: width * 0.95,
+                                    margin: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.pink,
+                                      borderRadius: BorderRadius.circular(7),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.7),
+                                          spreadRadius: 2,
+                                          blurRadius: 7,
+                                        ),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Text(accList.accountName),
+                                        Text(accList.accountName),
+                                        Text(accList.accountName),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Container();
         },
       ),
     );

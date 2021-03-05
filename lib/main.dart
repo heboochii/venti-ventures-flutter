@@ -2,7 +2,9 @@ import 'package:account_widget_list/Screens/Accounts.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
