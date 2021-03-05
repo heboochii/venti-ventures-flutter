@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:account_widget_list/Models/accounts_model.dart';
 
-class AccountListView extends StatefulWidget {
+class Investment extends StatefulWidget {
   @override
-  _AccountListViewState createState() => _AccountListViewState();
+  _InvestmentState createState() => _InvestmentState();
 }
 
-class _AccountListViewState extends State<AccountListView> {
+class _InvestmentState extends State<Investment> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    return Expanded(
+    return SizedBox(
+      height: 250,
       child: ListView.builder(
-        shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: accountList.length,
         itemBuilder: (BuildContext context, int index) {
           final AccountsList accList = accountList[index];
-          return accList.accountName == 'Credit Card Account'
+          return accList.accountName == 'Money Market Account'
               ? Container(
-                  height: 4,
-                  width: width * 0.7,
+                  // height: 4,
+                  width: width * 0.95,
                   margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Colors.orange,
                     borderRadius: BorderRadius.circular(2.5),
                   ),
                 )

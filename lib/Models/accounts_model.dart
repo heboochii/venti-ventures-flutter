@@ -8,9 +8,6 @@ class AccountsList {
   final String accountName;
   final String iban;
 
-  final String text;
-  final bool unread;
-
   AccountsList({
     this.balance,
     this.currencyIsoCode,
@@ -20,8 +17,6 @@ class AccountsList {
     this.accountNumber,
     this.accountName,
     this.iban,
-    this.text,
-    this.unread,
   });
 }
 
